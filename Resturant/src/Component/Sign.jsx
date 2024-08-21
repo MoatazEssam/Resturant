@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import img from "../assets/Copy of Happy Culinarians Day! by Slidesgo.pptx.png";
 
 const Sign = () => {
   const [isMoved, setIsMoved] = useState(false);
@@ -26,11 +27,19 @@ const Sign = () => {
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="flex flex-col md:flex-row justify-center drop-shadow-[-5px_5px_5px_rgba(0,0,0,1)] relative items-center gap-1 border-2 bg-slate-100 shadow-2xl rounded-lg p-8 overflow-hidden">
+      <div
+        style={{
+          backgroundImage: `url(${img})`,
+          backgroundSize: "cover",
+        }}
+        className={`flex flex-col  md:flex-row justify-center   relative items-center gap-1 border-2 bg-url(${img}) shadow-2xl rounded-lg p-8 overflow-hidden`}
+      >
+        <div className="w-full h-full absolute bg-black opacity-60 "></div>
+        <div></div>
         {/* Sign In Form */}
         <form
           onSubmit={handleSubmitSignIn(onSubmitSignIn)}
-          className="w-full max-w-xs px-10 py-10"
+          className="w-full max-w-xs z-10 px-10 py-10"
         >
           <h2 className="text-2xl font-bold mb-6 text-center">Sign In</h2>
           <div className="mb-4">
@@ -84,7 +93,7 @@ const Sign = () => {
         {/* Sign Up Form */}
         <form
           onSubmit={handleSubmitSignUp(onSubmitSignUp)}
-          className="w-full max-w-xs px-10 py-10"
+          className="w-full max-w-xs z-10 px-10 py-10"
         >
           <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
           <div className="mb-4">
@@ -137,7 +146,7 @@ const Sign = () => {
 
         {/* Clickable Absolute Div */}
         <div
-          className={`bg-gradient-to-t from-[#ff3b00] to-[#ff3e16] absolute flex flex-col justify-center items-center top-0 right-0 w-1/2 h-full transform transition-transform duration-500 ${
+          className={`bg-gradient-to-t from-[#ff3b00] to-[#ff3e16] absolute flex flex-col z-50 justify-center items-center top-0 right-0 w-1/2 h-full transform transition-transform duration-500 ${
             isMoved ? "-translate-x-full" : ""
           }`}
         >
