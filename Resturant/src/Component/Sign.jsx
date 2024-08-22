@@ -27,13 +27,13 @@ const Sign = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex bg-gray-300 justify-center items-center h-screen">
       <div
         style={{
           backgroundImage: `url(${img})`,
           backgroundSize: "cover",
         }}
-        className={`flex flex-col  md:flex-row justify-center h-fit sm:h-[60%] p-5   z-10  relative items-center gap-14 drop-shadow-2xl border-2 bg-url(${img}) shadow-2xl rounded-2xl p-8 overflow-hidden`}
+        className={`flex flex-col  md:flex-row justify-center h-fit sm:h-[60%] p-5   z-10  relative items-center gap-14 drop-shadow-2xl border-4 bg-url(${img}) shadow-2xl rounded-2xl p-8 overflow-hidden`}
       >
         <div className="w-full h-full -z-10 absolute bg-black opacity-70 "></div>
         {/* Sign In Form */}
