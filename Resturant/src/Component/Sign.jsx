@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import img from "../assets/Copy of Happy Culinarians Day! by Slidesgo.pptx.png";
+import { FaFacebook, FaInstagram, FaGooglePlus } from "react-icons/fa";
 
 const Sign = () => {
   const [isMoved, setIsMoved] = useState(false);
@@ -32,17 +33,23 @@ const Sign = () => {
           backgroundImage: `url(${img})`,
           backgroundSize: "cover",
         }}
-        className={`flex flex-col  md:flex-row justify-center   relative items-center gap-1 border-2 bg-url(${img}) shadow-2xl rounded-lg p-8 overflow-hidden`}
+        className={`flex flex-col  md:flex-row justify-center h-fit sm:h-[60%] p-5   z-10  relative items-center gap-14 drop-shadow-2xl border-2 bg-url(${img}) shadow-2xl rounded-2xl p-8 overflow-hidden`}
       >
-        <div className="w-full h-full absolute bg-black opacity-60 "></div>
-        <div></div>
+        <div className="w-full h-full -z-10 absolute bg-black opacity-70 "></div>
         {/* Sign In Form */}
         <form
           onSubmit={handleSubmitSignIn(onSubmitSignIn)}
-          className="w-full max-w-xs z-10 px-10 py-10"
+          className="w-full flex flex-col justify-center  items-center px-2 py-2"
         >
-          <h2 className="text-2xl font-bold mb-6 text-center">Sign In</h2>
-          <div className="mb-4">
+          <h2 className="text-4xl font-cairo text-white font-bold mb-4 text-center">
+            Sign In
+          </h2>
+          <div className="flex items-center  text-gray-200  text-2xl justify-center gap-8 flex-row">
+            <FaFacebook className="hover:text-[#ff550c]  duration-300 ease-in-out  cursor-pointer" />
+            <FaInstagram className="hover:text-[#ff550c] duration-300 ease-in-out cursor-pointer" />
+            <FaGooglePlus className="hover:text-[#ff550c] duration-300 ease-in-out cursor-pointer" />
+          </div>
+          <div className="my-4">
             <input
               id="username-signin"
               placeholder="Username"
@@ -50,7 +57,7 @@ const Sign = () => {
               {...registerSignIn("username", {
                 required: "Username is required",
               })}
-              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+              className={`shadow appearance-none border rounded w-[300px]  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
                 signInErrors.username ? "border-red-500" : ""
               }`}
             />
@@ -69,7 +76,7 @@ const Sign = () => {
               {...registerSignIn("password", {
                 required: "Password is required",
               })}
-              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline ${
+              className={`shadow appearance-none border rounded w-[300px]  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
                 signInErrors.password ? "border-red-500" : ""
               }`}
             />
@@ -83,7 +90,7 @@ const Sign = () => {
           <div className="flex items-center justify-center">
             <button
               type="submit"
-              className="bg-[#ff3b00] hover:bg-blue-700 text-white font-semibold w-full py-2 rounded-3xl focus:outline-none focus:shadow-outline"
+              className="bg-[#cc6318] font-cairo hover:bg-[#ff550c] w-40 text-white font-semibold  py-2 rounded-3xl focus:outline-none focus:shadow-outline"
             >
               Sign In
             </button>
@@ -93,10 +100,17 @@ const Sign = () => {
         {/* Sign Up Form */}
         <form
           onSubmit={handleSubmitSignUp(onSubmitSignUp)}
-          className="w-full max-w-xs z-10 px-10 py-10"
+          className="w-full flex flex-col justify-center  items-center px-2 py-2"
         >
-          <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
-          <div className="mb-4">
+          <h2 className="text-2xl font-cairo text-white font-bold mb-2 text-center">
+            Craete Account
+          </h2>
+          <div className="flex items-center  text-gray-200  text-2xl justify-center gap-8 flex-row">
+            <FaFacebook className="hover:text-[#ff550c]  duration-300 ease-in-out  cursor-pointer" />
+            <FaInstagram className="hover:text-[#ff550c] duration-300 ease-in-out cursor-pointer" />
+            <FaGooglePlus className="hover:text-[#ff550c] duration-300 ease-in-out cursor-pointer" />
+          </div>
+          <div className="my-4">
             <input
               id="username-signup"
               placeholder="Username"
@@ -104,7 +118,7 @@ const Sign = () => {
               {...registerSignUp("username", {
                 required: "Username is required",
               })}
-              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+              className={`shadow appearance-none border rounded w-[300px]  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
                 signUpErrors.username ? "border-red-500" : ""
               }`}
             />
@@ -123,7 +137,7 @@ const Sign = () => {
               {...registerSignUp("password", {
                 required: "Password is required",
               })}
-              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline ${
+              className={`shadow appearance-none border rounded w-[300px]  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
                 signUpErrors.password ? "border-red-500" : ""
               }`}
             />
@@ -137,7 +151,7 @@ const Sign = () => {
           <div className="flex items-center justify-center text-center">
             <button
               type="submit"
-              className="bg-[#ff3b00] hover:bg-blue-700 text-white font-semibold w-full py-2 rounded-3xl focus:outline-none focus:shadow-outline"
+              className="bg-[#cc6318] font-cairo  hover:bg-[#ff550c] w-40 text-white font-semibold  py-2 rounded-3xl focus:outline-none focus:shadow-outline"
             >
               Sign Up
             </button>
@@ -146,18 +160,25 @@ const Sign = () => {
 
         {/* Clickable Absolute Div */}
         <div
-          className={`bg-gradient-to-t from-[#ff3b00] to-[#ff3e16] absolute flex flex-col z-50 justify-center items-center top-0 right-0 w-1/2 h-full transform transition-transform duration-500 ${
-            isMoved ? "-translate-x-full" : ""
+          className={`bg-gradient-to-t px-5 from-[#ff3b00] to-[#ff9d2e] absolute flex flex-col  ease-in-out justify-center items-center top-0 left-0 w-full sm:w-1/2 h-1/2 sm:h-full transform transition-transform duration-500 ${
+            isMoved
+              ? " translate-y-full sm:translate-y-0 sm:translate-x-full"
+              : ""
           }`}
         >
-          <h1 className="text-2xl font-bold mb-6 text-center">
-            {isMoved ? "Welcome Back" : "Don't Have an Account?"}
+          <h1 className="text-4xl tracking-widest text-white font-cairo  w-full font-extrabold mb-2 text-center">
+            {isMoved ? "Hello , Friend !" : "Welcome Back !"}
           </h1>
+          <p className="text-sm text-gray-500 font-cairo  w-full font-extrabold mb-2 text-center">
+            {isMoved
+              ? "Enter Your Personal Informations To Start Your Journey In our Resturant With us"
+              : "To Keep Connected With Us Please Login With Your Personal Informations"}
+          </p>
           <button
+            className="bg-[#ff550c] w-40 border-2 border-white  text-white font-semibold  py-2 rounded-3xl focus:outline-none focus:shadow-outline"
             onClick={() => setIsMoved(!isMoved)}
-            className="bg-[#ff3b00] h-fit w-fit p-4 text-white font-semibold rounded-3xl"
           >
-            {isMoved ? "Sign In" : "Sign Up"}
+            {isMoved ? "Sign UP" : "Sign In"}
           </button>
         </div>
       </div>

@@ -8,6 +8,9 @@ export default {
         primary: "#fea928",
         secondary: "#ed8900",
       },
+      fontFamily: {
+        cairo: ["Cairo", "sans-serif"],
+      },
       container: {
         center: true,
         padding: {
