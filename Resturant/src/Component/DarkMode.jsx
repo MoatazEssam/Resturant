@@ -20,18 +20,18 @@ const DarkMode = () => {
   return (
     <div className="relative">
       <img
-        src={Light}
+        src={night}
         alt="light"
         onClick={() => settheme(theme === "light" ? "dark" : "light")}
-        className={` w-12 cursor-pointer drop-shadow-md transition-all duration-300 absolute z-10 right-0 ${
+        className={` w-10 sm:w-12 cursor-pointer drop-shadow-md transition-all duration-300 absolute z-10 right-0 ${
           theme === "dark" ? "opacity-0" : "opacity-100"
         }`}
       />
       <img
-        src={night}
+        src={Light}
         onClick={() => settheme(theme === "light" ? "dark" : "light")}
         alt="night"
-        className={` w-12 cursor-pointer drop-shadow-md transition-all duration-300 ${
+        className={` w-10 sm:w-12 cursor-pointer drop-shadow-md transition-all duration-300 ${
           theme === "light" ? "opacity-0" : "opacity-100"
         }`}
       />

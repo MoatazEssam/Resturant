@@ -7,6 +7,7 @@ export default {
       colors: {
         primary: "#fea928",
         secondary: "#ed8900",
+        black: "#21272a",
       },
       fontFamily: {
         cairo: ["Cairo", "sans-serif"],
@@ -15,7 +16,7 @@ export default {
         center: true,
         padding: {
           DEFAULT: "1rem",
-          sm: "3rem",
+          sm: "2rem",
         },
       },
     },
