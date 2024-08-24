@@ -52,7 +52,7 @@ const Landing = () => {
   };
 
   return (
-    <div className="relative  dark:bg-black overflow-hidden  flex  w-full h-fit">
+    <div className="relative  box-border shadow-2xl shadow-black rounded-b-sm dark:bg-black overflow-hidden  flex  w-full h-fit">
       {/* Background images */}
       <div className="absolute w-full h-full">
         <img
