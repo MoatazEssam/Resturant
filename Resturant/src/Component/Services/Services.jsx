@@ -58,7 +58,7 @@ const Services = () => {
               <img
                 src={data.img}
                 alt=""
-                className="w-[150px] h-[150px]  p-6  object-cover relative z-10 transition duration-500 ease-in-out 
+                className="w-[150px] h-[150px] stroke-current p-6  object-cover relative z-10 transition duration-500 ease-in-out 
                 dark:invert dark:filter dark:brightness-0 dark:sepia dark:hue-rotate-[180deg] dark:saturate-200
                 "
               />

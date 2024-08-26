@@ -1,0 +1,26 @@
+/* Style.css */
+
+.slide-item {
+  position: relative;
+  overflow: hidden; /* Ensures the expanded background does not overflow */
+}
+
+.slide-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Initial width is half of the div */
+  height: 100%;
+  background-color: rgba(0, 255, 255, 0.5); /* Semi-transparent color for the background */
+  transition: width 0.3s ease; /* Smooth transition for width change */
+  z-index: 1;
+}
+
+.slide-item:hover .overlay {
+  width: 100%; /* Expand to full width on hover */
+}
+
+.slide-item .content {
+  position: relative;
+  z-index: 2; /* Ensures content is on top of the overlay */
+}
