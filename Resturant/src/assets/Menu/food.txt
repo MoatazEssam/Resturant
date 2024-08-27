@@ -1,75 +1,3 @@
-import img1 from "../../assets/Menu/pizza/pizzaBBQchicken.jpg";
-import img2 from "../../assets/Menu/pizza/pizzaBuffalo Chicken.jpeg";
-import img3 from "../../assets/Menu/pizza/pizzaFourCheese.jpeg";
-import img4 from "../../assets/Menu/pizza/PizzaHawaii.jpeg";
-import img5 from "../../assets/Menu/pizza/pizzaMargherita.jpg";
-import img6 from "../../assets/Menu/pizza/pizzaMeat Lovers.jpeg";
-import img7 from "../../assets/Menu/pizza/pizzaMushroom and Truffle.jpeg";
-import img8 from "../../assets/Menu/pizza/pizzaPepperoni.jpg";
-import img9 from "../../assets/Menu/pizza/pizzaSpinach and Feta.jpeg";
-import img10 from "../../assets/Menu/pizza/pizzaVeggie Delight.jpeg";
-import img11 from "../../assets/Menu/burger/Avocado Bacon Burger.jpeg";
-import img12 from "../../assets/Menu/burger/Bacon Cheeseburger.jpeg";
-import img13 from "../../assets/Menu/burger/BBQ Bacon Burger.jpeg";
-import img14 from "../../assets/Menu/burger/Blue Cheese Burger.jpeg";
-import img15 from "../../assets/Menu/burger/Chicken Burger.jpeg";
-import img16 from "../../assets/Menu/burger/Classic Cheeseburger.jpeg";
-import img17 from "../../assets/Menu/burger/Double Decker.jpeg";
-import img18 from "../../assets/Menu/burger/Mushroom Swiss Burger.jpeg";
-import img19 from "../../assets/Menu/burger/Spicy Jalapeno Burger.jpeg";
-import img20 from "../../assets/Menu/burger/Veggie Burger.jpeg";
-import img21 from "../../assets/Menu/Drink/Blue Perry.jpeg";
-import img22 from "../../assets/Menu/Drink/Espresso.jpeg";
-import img23 from "../../assets/Menu/Drink/Fruit Punch.jpeg";
-import img24 from "../../assets/Menu/Drink/Green Juice.jpeg";
-import img25 from "../../assets/Menu/Drink/Hot Chocolate.jpeg";
-import img26 from "../../assets/Menu/Drink/Iced Tea.jpeg";
-import img27 from "../../assets/Menu/Drink/Latte.jpeg";
-import img28 from "../../assets/Menu/Drink/Lemonade.jpeg";
-import img29 from "../../assets/Menu/Drink/Mango Smoothie.jpeg";
-import img30 from "../../assets/Menu/Drink/Mojito.jpeg";
-import img31 from "../../assets/Menu/seafood/Calamari.jpeg";
-import img32 from "../../assets/Menu/seafood/Clam Chowder.jpeg";
-import img33 from "../../assets/Menu/seafood/Crab Cakes.jpeg";
-import img34 from "../../assets/Menu/seafood/Fish and Chips.jpeg";
-import img35 from "../../assets/Menu/seafood/Grilled Salmon.jpeg";
-import img36 from "../../assets/Menu/seafood/Lobster Roll.jpeg";
-import img37 from "../../assets/Menu/seafood/Mussels in White Wine.jpeg";
-import img38 from "../../assets/Menu/seafood/Oysters Rockefeller.jpeg";
-import img39 from "../../assets/Menu/seafood/Seafood Paella.jpeg";
-import img40 from "../../assets/Menu/seafood/Shrimp Scampi.jpeg";
-import img41 from "../../assets/Menu/salad/Asian Chicken Salad.jpeg";
-import img42 from "../../assets/Menu/salad/Caesar Salad.jpeg";
-import img43 from "../../assets/Menu/salad/Caprese Salad.jpeg";
-import img44 from "../../assets/Menu/salad/Cobb Salad.jpeg";
-import img45 from "../../assets/Menu/salad/Greek Saladjpeg.jpeg";
-import img46 from "../../assets/Menu/salad/Kale Salad.jpeg";
-import img47 from "../../assets/Menu/salad/Niçoise Salad.jpeg";
-import img48 from "../../assets/Menu/salad/Quinoa Salad.jpeg";
-import img49 from "../../assets/Menu/salad/Taco Salad.jpeg";
-import img50 from "../../assets/Menu/salad/Tuna Salad.jpeg";
-import img51 from "../../assets/Menu/salad/Waldorf Salad.jpeg";
-import img52 from "../../assets//Menu/Breakfast/Avocado Toast.jpeg";
-import img53 from "../../assets//Menu/Breakfast/Bagel with Cream Cheese.jpeg";
-import img54 from "../../assets//Menu/Breakfast/Breakfast Burrito.jpeg";
-import img55 from "../../assets//Menu/Breakfast/Breakfast Sandwich.jpeg";
-import img56 from "../../assets//Menu/Breakfast/Eggs Benedict.jpeg";
-import img57 from "../../assets//Menu/Breakfast/French Toast.jpeg";
-import img58 from "../../assets//Menu/Breakfast/Granola Parfait.jpeg";
-import img59 from "../../assets//Menu/Breakfast/Omelette.jpeg";
-import img60 from "../../assets//Menu/Breakfast/Pancakes.jpeg";
-import img61 from "../../assets//Menu/Breakfast/Smoothie Bowl.jpeg";
-
-export const cat = [
-  { id: 1, name: "All", att: "" },
-  { id: 2, name: "Pizza", att: "Pizza" },
-  { id: 3, name: "Burger", att: "Burger" },
-  { id: 4, name: "Seafood", att: "Seafood" },
-  { id: 5, name: "Drinks", att: "Drink" },
-  { id: 6, name: "Breakfast", att: "Breakfast" },
-  { id: 7, name: "Salad", att: "Salad" },
-];
-export const foods = [
   {
     id: 1,
     name: "Margherita",
@@ -167,6 +95,7 @@ export const foods = [
     price: 10.49,
     category: "Pizza",
   },
+
   {
     id: 11,
     name: "Classic Cheeseburger",
@@ -265,7 +194,7 @@ export const foods = [
     price: 12.49,
     category: "Burger",
   },
-  {
+{
     id: 21,
     name: "Blue Perry",
     description: "Classic cola with a refreshing taste.",
@@ -355,7 +284,7 @@ export const foods = [
     price: 3.29,
     category: "Drink",
   },
-  {
+ {
     id: 31,
     name: "Grilled Salmon",
     description: "Salmon fillet grilled to perfection with lemon and herbs.",
@@ -445,7 +374,7 @@ export const foods = [
     price: 10.99,
     category: "Seafood",
   },
-  {
+ {
     id: 41,
     name: "Caesar Salad",
     description:
@@ -553,99 +482,3 @@ export const foods = [
     price: 10.99,
     category: "Salad",
   },
-  {
-    id: 52,
-    name: "Pancakes",
-    description: "Fluffy pancakes served with maple syrup and butter.",
-    rate: 4.8,
-    img: img60,
-    price: 6.99,
-    category: "Breakfast",
-  },
-  {
-    id: 53,
-    name: "Omelette",
-    description:
-      "Three-egg omelette with your choice of cheese, ham, and veggies.",
-    rate: 4.7,
-    img: img59,
-    price: 7.49,
-    category: "Breakfast",
-  },
-  {
-    id: 54,
-    name: "French Toast",
-    description:
-      "Bread dipped in egg batter, fried, and topped with powdered sugar.",
-    rate: 4.6,
-    img: img57,
-    price: 6.49,
-    category: "Breakfast",
-  },
-  {
-    id: 55,
-    name: "Eggs Benedict",
-    description:
-      "Poached eggs on English muffins with ham and hollandaise sauce.",
-    rate: 4.9,
-    img: img56,
-    price: 8.99,
-    category: "Breakfast",
-  },
-  {
-    id: 56,
-    name: "Breakfast Burrito",
-    description: "A tortilla filled with scrambled eggs, cheese, and sausage.",
-    rate: 4.7,
-    img: img54,
-    price: 7.99,
-    category: "Breakfast",
-  },
-  {
-    id: 57,
-    name: "Avocado Toast",
-    description:
-      "Toast topped with mashed avocado, poached eggs, and chili flakes.",
-    rate: 4.8,
-    img: img52,
-    price: 5.99,
-    category: "Breakfast",
-  },
-  {
-    id: 58,
-    name: "Smoothie Bowl",
-    description:
-      "A thick smoothie topped with granola, fruits, and chia seeds.",
-    rate: 4.6,
-    img: img61,
-    price: 8.49,
-    category: "Breakfast",
-  },
-  {
-    id: 59,
-    name: "Bagel with Cream Cheese",
-    description: "Toasted bagel served with a generous spread of cream cheese.",
-    rate: 4.5,
-    img: img53,
-    price: 3.99,
-    category: "Breakfast",
-  },
-  {
-    id: 60,
-    name: "Breakfast Sandwich",
-    description: "Egg, cheese, and bacon or sausage on a toasted bun.",
-    rate: 4.6,
-    img: img55,
-    price: 5.99,
-    category: "Breakfast",
-  },
-  {
-    id: 61,
-    name: "Granola Parfait",
-    description: "Layers of granola, yogurt, and fresh berries.",
-    rate: 4.5,
-    img: img58,
-    price: 4.99,
-    category: "Breakfast",
-  },
-];

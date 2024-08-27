@@ -33,10 +33,16 @@ const Services = () => {
   ];
   return (
     <div className=" overflow-hidden pt-10 sm:pt-32 dark:bg-black ">
-      <div className=" flex flex-col w-full  justify-center  items-center ">
+      <div
+        data-aos="fade-up"
+        className=" flex flex-col w-full  justify-center  items-center "
+      >
         <div className="bg-primary h-2  w-[80%] sm:w-[40%]"></div>
       </div>
-      <div className="flex flex-col mx-auto text-center w-full  my-10 sm:my-20 justify-center items-center ">
+      <div
+        data-aos="fade-up"
+        className="flex flex-col mx-auto text-center w-full  my-10 sm:my-20 justify-center items-center "
+      >
         <h1 className="text-4xl tracking-wider text-black dark:text-white sm:text-8xl font-cairo font-bold">
           Our <span className="text-primary">Services</span>
         </h1>
@@ -51,6 +57,9 @@ const Services = () => {
         {services.map((data) => (
           <div
             key={data.id}
+            data-aos="flip-left"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="500"
             className="relative gap-3 group flex flex-col items-center text-center"
           >
             <div className="relative w-fit h-fit mb-5 bg-transparent">

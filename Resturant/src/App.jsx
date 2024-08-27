@@ -1,21 +1,28 @@
 import { useState } from "react";
 import React, { useEffect } from "react";
 import Sign from "./Component/Sign";
-import Header from "./Component/Header/Header";
-import Landing from "./Component/Landing/Landing";
-import Services from "./Component/Services/Services";
-import Categories from "./Component/Categories/Categories";
-import Menu from "./Component/Menu/Menu";
+import Home from "./Component/Home/Home";
+import ReactDOM from "react-dom/client";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
+  useEffect(() => {
+    Aos.init({
+      offset: 100,
+      duration: 800,
+      easing: "ease-in-out",
+      delay: 100,
+    });
+  }, []);
   return (
-    <div className="">
-      {/* <Sign /> */}
-      <Header />
-      <Landing />
-      <Services />
-      <Categories />
-      <Menu />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {/* <Route path="/" element={<Sign />} /> */}
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

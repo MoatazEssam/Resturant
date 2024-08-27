@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import img from "../assets/Copy of Happy Culinarians Day! by Slidesgo.pptx.png";
 import { FaFacebook, FaInstagram, FaGooglePlus } from "react-icons/fa";
 
 const Sign = () => {
   const [isMoved, setIsMoved] = useState(false);
+  const navigate = useNavigate(); // Initialize navigate
 
   const {
     register: registerSignIn,
@@ -18,12 +20,16 @@ const Sign = () => {
     formState: { errors: signUpErrors },
   } = useForm();
 
+  // Navigate to Home page on successful sign in
   const onSubmitSignIn = (data) => {
     console.log("Sign In Data:", data);
+    navigate("/Home"); // Navigate to Home page
   };
 
+  // Navigate to Home page on successful sign up
   const onSubmitSignUp = (data) => {
     console.log("Sign Up Data:", data);
+    navigate("/Home"); // Navigate to Home page
   };
 
   return (
@@ -103,7 +109,7 @@ const Sign = () => {
           className="w-full flex flex-col justify-center  items-center px-2 py-2"
         >
           <h2 className="text-2xl font-cairo text-white font-bold mb-2 text-center">
-            Craete Account
+            Create Account
           </h2>
           <div className="flex items-center  text-gray-200  text-2xl justify-center gap-8 flex-row">
             <FaFacebook className="hover:text-[#ff550c]  duration-300 ease-in-out  cursor-pointer" />

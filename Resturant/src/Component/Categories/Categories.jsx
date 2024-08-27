@@ -11,8 +11,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import img1 from "../../assets/Cat/Breakfast.jpg";
 import img2 from "../../assets/Cat/burger.jpg";
-import img3 from "../../assets/Cat/drinks.jpg";
-import img4 from "../../assets/Cat/pexels-sydney-troxell-223521-708587.jpg";
+import img3 from "../../assets/Cat/MIXED BERRY SMOOTHIE.jpeg";
+import img4 from "../../assets/Menu/pizza/pizzaMeat Lovers.jpeg";
 import img5 from "../../assets/Cat/seafood.jpg";
 import img6 from "../../assets/Cat/salad.jpg";
 
@@ -20,29 +20,35 @@ const Categories = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1024);
   const sliderRef = useRef(null);
-  const handleResize = useCallback(() => {
-    setIsLargeScreen(window.innerWidth > 1024);
-  }, []);
+
+  // Debounce Resize Handler
   useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 1024);
+    };
+
     const debounceResize = () => {
       clearTimeout(window.resizeTimer);
-      window.resizeTimer = setTimeout(handleResize, 100);
+      window.resizeTimer = setTimeout(handleResize, 200);
     };
 
     window.addEventListener("resize", debounceResize);
-    return () => window.removeEventListener("resize", debounceResize);
-  }, [handleResize]);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", debounceResize);
+      clearTimeout(window.resizeTimer);
+    };
+  }, []);
 
   const settings = useMemo(
     () => ({
       arrows: false,
       infinite: false,
-      speed: 500,
+      speed: 300, // Reduced speed for better performance
       slidesToScroll: 1,
-      className: "center",
       centerPadding: "10px",
-      autoplay: false,
-      autoplaySpeed: 2000,
+      autoplay: false, // Disabled autoplay for better performance
       cssEase: "ease-in-out",
       afterChange: (current) => setSlideIndex(current),
       responsive: [
@@ -73,7 +79,7 @@ const Categories = () => {
     []
   );
 
-  const Categories = useMemo(
+  const CategoriesData = useMemo(
     () => [
       {
         id: 1,
@@ -140,15 +146,30 @@ const Categories = () => {
             width="1em"
           >
             <path d="M7 21h10M12 21a9 9 0 009-9H3a9 9 0 009 9z" />
-            <path d="M11.38 12a2.4 2.4 0 01-.4-4.77 2.4 2.4 0 013.2-2.77 2.4 2.4 0 013.47-.63 2.4 2.4 0 013.37 3.37 2.4 2.4 0 01-1.1 3.7 2.51 2.51 0 01.03 1.1M13 12l4-4" />
-            <path d="M10.9 7.25A3.99 3.99 0 004 10c0 .73.2 1.41.54 2" />
+            <path d="M11.38 12a2.4 2.4 0 01.55-4.71h.19a2.4 2.4 0 012.38 2.06A2.4 2.4 0 0117 12m-3.06-5.88a3.5 3.5 0 00-6.75-1.17" />
           </svg>
         ),
       },
       {
         id: 5,
-        title: "Seafood",
+        title: "Drinks",
         img: img3,
+        des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, voluptate.",
+        icon: (
+          <svg
+            viewBox="0 0 384 512"
+            fill="currentColor"
+            height="1em"
+            width="1em"
+          >
+            <path d="M379.8 58.2C383 52.2 384 46 384 40c0-22.1-17.9-40-40-40H40C17.9 0 0 17.9 0 40c0 6 1 12.2 4.2 18.2L176 421.6V456h-24c-4.4 0-8 3.6-8 8v32c0 8.8 7.2 16 16 16h128c8.8 0 16-7.2 16-16v-32c0-4.4-3.6-8-8-8h-24v-34.4l171.8-363.4zM85.8 80l-21.6-40h255.6l-21.6 40H85.8z" />
+          </svg>
+        ),
+      },
+      {
+        id: 6,
+        title: "Seafood",
+        img: img5,
         des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, voluptate.",
         icon: (
           <svg
@@ -161,29 +182,25 @@ const Categories = () => {
           </svg>
         ),
       },
-      {
-        id: 6,
-        title: "Drinks",
-        img: img5,
-        des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, voluptate.",
-        icon: (
-          <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
-            <path d="M20.832 4.555A1 1 0 0020 3H4a1 1 0 00-.832 1.554L11 16.303V20H8v2h8v-2h-3v-3.697l7.832-11.748zm-2.7.445l-2 3H7.868l-2-3h12.264z" />
-          </svg>
-        ),
-      },
     ],
     []
   );
-  // Calculate progress width percentage based on screen size and slideIndex
-  const progressWidth = isLargeScreen
-    ? (slideIndex / 3) * 100
-    : ((slideIndex + 1) / Categories.length) * 100;
+
+  const progressWidth = useMemo(() => {
+    const totalCategories = CategoriesData.length;
+    const progress = isLargeScreen
+      ? ((slideIndex + 3) / totalCategories) * 100
+      : ((slideIndex + 1) / totalCategories) * 100;
+
+    return `${progress}%`;
+  }, [slideIndex, isLargeScreen, CategoriesData]);
 
   return (
-    <div className="overflow-hidden h-full  pt-10 sm:pt-32 dark:bg-black">
-      {/* Header Section */}
-      <div className="flex flex-col w-full justify-center text-center items-center mb-12">
+    <div className=" dark:bg-black bg-white px-[3rem]">
+      <div
+        data-aos="fade-up"
+        className="flex justify-center flex-col text-center py-12 items-center "
+      >
         <div className="bg-primary mb-5 h-2 w-[80%] sm:w-[40%]"></div>
         <h1 className="text-4xl tracking-wider text-black dark:text-white mb-2 sm:text-6xl font-cairo font-bold">
           Our <span className="text-primary">Categories</span>
@@ -194,68 +211,40 @@ const Categories = () => {
           perferendis ex deserunt iusto architecto modi molestiae quos libero,
           error autem.
         </p>
+        <div className="hidden md:flex gap-3"></div>
       </div>
 
-      {/* Slider Section */}
-      <div className="container  ">
-        <div className="slider-container">
-          <Slider
-            {...settings}
-            ref={(slider) => {
-              sliderRef.current = slider;
-            }}
-          >
-            {Categories.map((data) => (
-              <div key={data.id} className="px-2 sm:px-4 md:px-6">
-                {/* Adjusted classes for margin and responsive spacing */}
-                <div
-                  className="flex group flex-col gap-4 py-2 px-auto text-center dark:bg-black relative mx-auto items-center w-fit drop-shadow-2xl shadow-2xl justify-center   
-                hover:shadow-xl transition-shadow duration-300 rounded-2xl "
-                >
-                  <div
-                    className="absolute duration-300 ease-in-out 
-                  transition-all group-hover:h-full
-                  -z-10
-                   bottom-0 left-0 w-full h-[60%] rounded-2xl bg-primary opacity-80"
-                  ></div>
-                  <div
-                    className="w-fit duration-300 ease-in-out 
-                  transition-all text-primary group-hover:text-gray-200  dark:text-gray-200 dark:group-hover:text-black text-6xl stroke-current h-fit flex justify-center items-center"
-                  >
-                    {data.icon}
-                  </div>
-                  <h1
-                    className="text-2xl duration-300 ease-in-out 
-                  transition-all font-cairo dark:group-hover:text-black dark:text-gray-200 group-hover:text-white font-bold text-black mb-2"
-                  >
-                    {data.title}
-                  </h1>
-                  <p
-                    className="text-lg mx-auto duration-300 ease-in-out 
-                  transition-all  dark:group-hover:text-black font-cairo mb-10 group-hover:text-white dark:text-gray-200 text-gray-600 "
-                  >
-                    {data.des}
-                  </p>
-                  <img
-                    src={data.img}
-                    alt={data.title}
-                    className="object-cover rounded-full w-[250px] h-[250px]"
-                  />
-                </div>
-              </div>
-            ))}
-          </Slider>
-
-          {/* Custom Progress Bar */}
-          <div className="flex justify-center mt-8">
-            <div className="w-[50%] border-2 border-primary sm:w-[40%] md:w-[30%] h-2 bg-gray-300 rounded-full relative">
+      <Slider ref={sliderRef} {...settings}>
+        {CategoriesData.map((category) => (
+          <div data-aos="zoom-in" s key={category.id} className="p-2">
+            <div className="relative group overflow-hidden flex flex-col gap-2 text-center pt-3 h-full w-fit border-2 rounded-xl  border-gray-200 justify-center items-center">
               <div
-                className="h-full bg-primary rounded-full transition-all duration-300"
-                style={{ width: `${progressWidth}%` }}
+                className="absolute  bottom-0  w-full hidden md:block
+                 bg-primary/90 dark:bg-primary/60 h-[50%] -z-10 group-hover:h-[100%] transition-all duration-300 rounded-lg"
               ></div>
+              <div className="text-primary text-6xl  md:group-hover:text-white md:dark:group-hover:text-black transition-all  duration-300 ">
+                {category.icon}
+              </div>
+              <h1 className="text-black  md:group-hover:text-white  md:dark:group-hover:text-black transition-all duration-300 dark:text-gray-200 text-3xl font-cairo   font-bold mb-2">
+                {category.title}
+              </h1>
+              <p className="text-gray-400   md:group-hover:text-white md:dark:group-hover:text-black transition-all duration-300 dark:text-gray-300 text-lg mb-4   mx-auto text-center">
+                {category.des}
+              </p>
+              <img
+                src={category.img}
+                alt={category.title}
+                className="w-full h-44 sm:h-64  self-center object-cover  "
+              />
             </div>
           </div>
-        </div>
+        ))}
+      </Slider>
+      <div className="w-[50%]  h-1 bg-slate-300 mx-auto mt-4 ">
+        <div
+          className="h-full bg-primary transition-all duration-300 ease-in-out"
+          style={{ width: progressWidth }}
+        ></div>
       </div>
     </div>
   );
