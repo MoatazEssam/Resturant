@@ -70,7 +70,10 @@ function Rating() {
   return (
     <div className="py-10   dark:bg-black">
       <div className="container">
-        <div className="flex flex-col w-full justify-center text-center items-center mb-12">
+        <div
+          data-aos="fade-up"
+          className="flex flex-col w-full justify-center text-center items-center mb-12"
+        >
           <div className="bg-primary mb-5 h-2 w-[80%] sm:w-[40%]"></div>
           <h1 className="text-4xl tracking-wider text-black dark:text-white mb-2 sm:text-6xl font-cairo font-bold">
             What Our Customers <span className="text-primary">Say</span>
@@ -86,24 +89,29 @@ function Rating() {
           <div data-aos="zoom-in">
             <Slider {...settings}>
               {TestimonialData.map((data) => (
-                <div className="my-6 shadow-2xl" key={data.id}>
-                  <div className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-2  rounded-xl dark:bg-gray-800 bg-primary/20 relative">
+                <div className="my-6 w-fit h-fit " key={data.id}>
+                  <div
+                    className="flex flex-col gap-4 hover:shadow-2xl border-2 border-gray-200/90 dark:border-gray-200/20
+                    py-8 px-6 mx-2  rounded-xl dark:bg-gray-800  relative"
+                  >
                     <div className="mb-4">
                       <img
                         src={data.img}
                         alt=""
-                        className="rounded-full h-20 w-20"
+                        className="rounded-full h-30 w-30"
                       />
                     </div>
-                    <div className="flex flex-col gap-4 items-center">
+                    <div className="flex flex-col z-10  max-w-[100%] md:max-w-[80%] gap-4 items-center">
                       <div className="space-y-3">
-                        <p className="text-gray-400 text-xs">{data.text}</p>
-                        <h1 className="text-xl font-bold text-black/80 dark:text-white">
+                        <p className="text-gray-400 font-cairo font-medium text-lg">
+                          {data.text}
+                        </p>
+                        <h1 className="text-3xl font-bold font-cairo text-black/80 dark:text-white">
                           {data.name}
                         </h1>
                       </div>
                     </div>
-                    <p className="text-black/20 text-9xl font-serif absolute top-0 right-0">
+                    <p className="text-black/20   dark:text-white/30 text-9xl font-serif absolute top-[15%] md:top-[25%] right-0">
                       ,,
                     </p>
                   </div>

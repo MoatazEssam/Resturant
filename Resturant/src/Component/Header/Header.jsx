@@ -2,12 +2,24 @@ import React, { useState } from "react";
 import logo from "../../assets/burger.png";
 import bg from "../../assets/header-bg.png";
 import { IoMenu, IoCloseSharp } from "react-icons/io5";
+import { useForm } from "react-hook-form";
+import { useNavigate, NavLink, Link, Navigate } from "react-router-dom";
 import bg2 from "../../assets/Landing/banner.jpg";
 import DarkMode from "../DarkMode";
+import Home from "../Home/Home";
+import Menu from "../Menu/Menu";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div
       className="relative"
@@ -31,9 +43,38 @@ const Header = () => {
         {/* Desktop navigation */}
         <div className="hidden sm:flex justify-center items-center">
           <ul className="flex font-[650] tracking-wide font-cairo text-white text-xl gap-4">
-            <li className="hover:text-[#ff8d29] cursor-pointer">Home</li>
-            <li className="hover:text-[#ff8d29] cursor-pointer">Menu</li>
-            <li className="hover:text-[#ff8d29] cursor-pointer">Services</li>
+            <li className="hover:text-[#ff8d29] cursor-pointer">
+              <ScrollLink
+                to="landing"
+                smooth={true}
+                duration={1000}
+                className="hover:text-[#ff8d29] cursor-pointer"
+              >
+                Home
+              </ScrollLink>
+            </li>
+            <li className="hover:text-[#ff8d29] cursor-pointer">
+              {" "}
+              <ScrollLink
+                to="menu"
+                smooth={true}
+                duration={2000}
+                className="hover:text-[#ff8d29] cursor-pointer"
+              >
+                Menu
+              </ScrollLink>
+            </li>
+            <li className="hover:text-[#ff8d29] cursor-pointer">
+              {" "}
+              <ScrollLink
+                to="reserve"
+                smooth={true}
+                duration={2000}
+                className="hover:text-[#ff8d29] cursor-pointer"
+              >
+                Reserve
+              </ScrollLink>
+            </li>
             <li className="hover:text-[#ff8d29] cursor-pointer">Contact Us</li>
           </ul>
         </div>
@@ -78,8 +119,18 @@ const Header = () => {
         </div>
         <ul className="flex flex-col font-[600] tracking-wide font-cairo  dark:text-white text-black items-start pl-8 pt-4 space-y-4 text-xl">
           <li className="hover:text-[#ff8d29] cursor-pointer">Home</li>
-          <li className="hover:text-[#ff8d29] cursor-pointer">Menu</li>
-          <li className="hover:text-[#ff8d29] cursor-pointer">Services</li>
+          <li
+            className="hover:text-[#ff8d29] cursor-pointer"
+            onClick={() => handleScroll("menu")}
+          >
+            Menu
+          </li>
+          <li
+            className="hover:text-[#ff8d29] cursor-pointer"
+            onClick={() => handleScroll("reserve")}
+          >
+            Reserve
+          </li>
           <li className="hover:text-[#ff8d29] cursor-pointer">Contact Us</li>
         </ul>
         <div className="absolute bottom-0 right-0 p-4">

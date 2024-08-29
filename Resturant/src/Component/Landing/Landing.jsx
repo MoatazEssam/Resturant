@@ -87,8 +87,8 @@ const Landing = () => {
                 <p className="text-lg  text-white font-cairo">{data.des}</p>
                 <div>
                   <button
-                    className="bg-gradient-to-r from-primary to-secondary hover:bg-none hover:scale-105 transition ease-in-out duration-500
-                   text-white text-2xl hover:text-[#ed8900] border-2 border-[#ed8900] font-cairo p-3 my-2  rounded-sm"
+                    className=" bg-primary/70  hover:bg-transparent hover:scale-105 transition ease-in-out duration-500
+                   text-white text-2xl hover:text-[#ed8900] border-2 dark:border-gray-200 border-black/70 font-cairo p-3 my-2  rounded-sm"
                   >
                     Order Now
                   </button>

@@ -6,6 +6,7 @@ import ReactDOM from "react-dom/client";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Menu from "./Component/Menu/Menu";
 
 function App() {
   useEffect(() => {
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         {/* <Route path="/" element={<Sign />} /> */}
         <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Menu />} /> */}
       </Routes>
     </BrowserRouter>
   );
