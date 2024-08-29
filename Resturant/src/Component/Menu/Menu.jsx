@@ -56,7 +56,8 @@ const Menu = () => {
             data-aos-easing="ease-out-cubic"
             data-aos-duration="1000"
             key={food.id}
-            className="group  hover:bg-primary/20  dark:hover:bg-primary/5 bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden 
+            className="group  hover:bg-primary/20  dark:hover:border-white  dark:hover:transition-all  dark:hover:duration-300 
+             dark:hover:ease-in-out dark:hover:border-2 bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden 
              hover:shadow-2xl transition-shadow hover:drop-shadow-2xl duration-300 flex flex-col justify-between"
           >
             <div className="relative  w-full h-full overflow-hidden">

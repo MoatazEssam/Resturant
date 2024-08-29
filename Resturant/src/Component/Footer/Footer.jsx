@@ -64,19 +64,19 @@ const Footer = () => {
             <div className="flex gap-x-5 flex-row">
               <div
                 className="w-12  group transition-all duration-300 ease-linear hover:bg-primary h-12 p-2 rounded-[18px]
-              cursor-pointer border-[1px] border-gray-200/40 dark:border-gray-200"
+              cursor-pointer border-[1px] border-gray-200/40 hover:scale-125 dark:border-gray-200"
               >
                 <FaFacebookF className="w-full dark:group-hover:text-black group-hover:text-gray-200 h-full text-primary" />
               </div>
               <div
                 className="w-12  group transition-all duration-300 ease-linear hover:bg-primary h-12 p-2 rounded-[18px]
-              cursor-pointer border-[1px] border-gray-200/40 dark:border-gray-200"
+              cursor-pointer border-[1px] border-gray-200/40 hover:scale-125 dark:border-gray-200"
               >
                 <FaInstagram className="w-full dark:group-hover:text-black group-hover:text-gray-200 h-full text-primary" />
               </div>
               <div
                 className="w-12  group transition-all duration-300 ease-linear hover:bg-primary h-12 p-2 rounded-[18px]
-              cursor-pointer border-[1px] border-gray-200/40 dark:border-gray-200"
+              cursor-pointer border-[1px] border-gray-200/40 hover:scale-125  dark:border-gray-200"
               >
                 <RiTwitterXLine className="w-full dark:group-hover:text-black group-hover:text-gray-200 h-full text-primary" />
               </div>
@@ -98,6 +98,12 @@ const Footer = () => {
                 <FaPhone className="text-primary text-2xl  md:self-start self-center sm:text-3xl mr-3 " />
                 <p className="text-gray-200 dark:text-gray-200">
                   +20 1148956841
+                </p>
+              </div>
+              <div className="flex flex-row text-2xl font-cairo font-semibold text-black dark:text-gray-200 items- gap-1">
+                <FaPhone className="text-primary text-2xl  md:self-start self-center sm:text-3xl mr-3 " />
+                <p className="text-gray-200 dark:text-gray-200">
+                  +20 1013230960
                 </p>
               </div>
               <div className="flex flex-row text-2xl font-cairo font-semibold text-black dark:text-gray-200 items- gap-1">
@@ -134,24 +140,24 @@ const Footer = () => {
             </h1>
             <ul className="flex flex-col font-[600] justify-start tracking-wide font-cairo  dark:text-white text-gray-200 items-start  text-xl sm:text-3xl">
               <li
-                className="hover:text-[#ff8d29] cursor-pointer"
+                className="hover:text-[#ff8d29]  hover:translate-x-2 transition-all duration-300 ease-linear cursor-pointer"
                 onClick={() => handleScroll("landing")}
               >
                 Home
               </li>
               <li
-                className="hover:text-[#ff8d29] cursor-pointer"
+                className="hover:text-[#ff8d29]  hover:translate-x-2 transition-all duration-300 ease-linear cursor-pointer"
                 onClick={() => handleScroll("menu")}
               >
                 Menu
               </li>
               <li
-                className="hover:text-[#ff8d29] cursor-pointer"
+                className="hover:text-[#ff8d29]  hover:translate-x-2 transition-all duration-300 ease-linear cursor-pointer"
                 onClick={() => handleScroll("reserve")}
               >
                 Reserve
               </li>
-              <li className="hover:text-[#ff8d29] cursor-pointer">
+              <li className="hover:text-[#ff8d29] hover:translate-x-2 transition-all duration-300 ease-linear cursor-pointer">
                 Contact Us
               </li>
             </ul>
