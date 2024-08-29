@@ -109,7 +109,7 @@ const Header = () => {
           <div className="flex flex-row items-center justify-center p-2 gap-2">
             <img src={logo} alt="logo" className="w-5 h-5" />
             <h1 className="font-cairo font-bold text-xl">
-              Foodie <span className="text-[#ff8d29] text-xl">.</span>
+              Foodie <span className="text-[#ff8d29] text-4xl">.</span>
             </h1>
           </div>
           <IoCloseSharp

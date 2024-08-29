@@ -16,6 +16,12 @@ function App() {
       easing: "ease-in-out",
       delay: 100,
     });
+
+    Aos.refresh({
+      duration: 800,
+      easing: "ease-in-out",
+      delay: 100,
+    });
   }, []);
   return (
     <BrowserRouter>

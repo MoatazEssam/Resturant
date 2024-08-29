@@ -15,14 +15,16 @@ const Reserve = () => {
       `Mr. ${data.Name}, you reserved a table for ${data.People} persons at ${data.Date} ${data.Time}. We will send the details to ${data.Email}.`
     );
   };
+
   return (
-    <div className=" overflow-hidden flex items-center py-20 justify-center pt-10 h-full dark:bg-black ">
-      <div className="flex flex-col items-center relative  text-center w-full">
-        <div data-aos="fade-up">
+    <div className="overflow-hidden flex items-center sm:py-40 justify-center h-full dark:bg-black">
+      <div className="flex flex-col items-center relative text-center w-full">
+        {/* Set data-aos-once to true for one-time animations */}
+        <div data-aos="fade-up" data-aos-once="true">
           <h1 className="text-2xl tracking-wider text-black dark:text-white sm:text-3xl font-cairo font-bold">
             RESERVATION
           </h1>
-          <h1 className="text-4xl tracking-wider text-primary  sm:text-8xl font-cairo font-extrabold">
+          <h1 className="text-4xl tracking-wider text-primary sm:text-8xl font-cairo font-extrabold">
             BOOK YOUR TABLE
           </h1>
         </div>
@@ -30,6 +32,7 @@ const Reserve = () => {
           data-aos="slide-right"
           data-aos-duration="1000"
           data-aos-easing="linear"
+          data-aos-once="true"
           src={img1}
           alt=""
           className="absolute z-0 opacity-40 w-[300px] h-[300px] md:w-[500px] md:h-[500px] top-[10%] -left-44"
@@ -40,10 +43,12 @@ const Reserve = () => {
           data-aos="slide-left"
           data-aos-duration="1000"
           data-aos-easing="linear"
-          className="absolute z-0 opacity-40  w-[300px] h-[300px] md:w-[500px] md:h-[500px] top-[50%] -right-48"
+          data-aos-once="true"
+          className="absolute z-0 opacity-40 w-[300px] h-[300px] md:w-[500px] md:h-[500px] top-[50%] -right-48"
         />
         <form
           data-aos="zoom-in"
+          data-aos-once="true"
           onSubmit={handleSubmit(onSubmit)}
           className="max-w-[90%] md:max-w-[50%] self-center z-10 gap-4 w-full grid grid-cols-1 md:grid-cols-2 px-2 py-20"
         >
@@ -55,7 +60,7 @@ const Reserve = () => {
               {...register("Name", {
                 required: "Name is required",
               })}
-              className={`shadow appearance-none  font-cairo focus:border-primary border-2 h-14 border-black rounded-sm w-full  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+              className={`shadow appearance-none font-cairo focus:border-primary border-2 h-14 border-black rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
                 errors.Name ? "border-red-500" : ""
               }`}
             />
@@ -71,7 +76,7 @@ const Reserve = () => {
               {...register("Email", {
                 required: "Email is required",
               })}
-              className={`shadow appearance-none font-cairo focus:border-primary border-2 h-14 border-black rounded-sm w-full  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+              className={`font-cairo focus:border-primary border-2 h-14 border-black rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
                 errors.Email ? "border-red-500" : ""
               }`}
             />
@@ -83,11 +88,11 @@ const Reserve = () => {
             <input
               id="Date"
               placeholder="Date"
-              type="Date"
+              type="date"
               {...register("Date", {
                 required: "Date is required",
               })}
-              className={`shadow appearance-none font-cairo focus:border-primary border-2 h-14 border-black rounded-sm w-full  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+              className={`font-cairo focus:border-primary border-2 h-14 border-black rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
                 errors.Date ? "border-red-500" : ""
               }`}
             />
@@ -103,7 +108,7 @@ const Reserve = () => {
               {...register("Time", {
                 required: "Time is required",
               })}
-              className={`shadow appearance-none font-cairo focus:border-primary border-2 h-14 border-black rounded-sm w-full  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+              className={`font-cairo focus:border-primary border-2 h-14 border-black rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
                 errors.Time ? "border-red-500" : ""
               }`}
             />
@@ -119,7 +124,7 @@ const Reserve = () => {
               {...register("People", {
                 required: "Number of People is required",
               })}
-              className={`shadow appearance-none font-cairo focus:border-primary border-2 h-14 border-black rounded-sm w-full  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+              className={`font-cairo focus:border-primary border-2 h-14 border-black rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
                 errors.People ? "border-red-500" : ""
               }`}
             />
@@ -129,8 +134,7 @@ const Reserve = () => {
           </div>
           <button
             type="submit"
-            className={`shadow appearance-none text-xl hover:text-white font-bold font-cairo hover:bg-primary bg-primary/80 border-2 h-14 border-black rounded-sm w-full  py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline 
-            `}
+            className="shadow appearance-none text-xl hover:text-white font-bold font-cairo hover:bg-primary bg-primary/80 border-2 h-14 border-black rounded-sm w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
           >
             Reserve
           </button>

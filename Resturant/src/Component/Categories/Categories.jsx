@@ -216,8 +216,8 @@ const Categories = () => {
 
       <Slider ref={sliderRef} {...settings}>
         {CategoriesData.map((category) => (
-          <div data-aos="zoom-in" s key={category.id} className="p-2">
-            <div className="relative group overflow-hidden flex flex-col gap-2 text-center pt-3 h-full w-fit border-2 rounded-xl  border-gray-200 justify-center items-center">
+          <div data-aos="zoom-in" s key={category.id} className="p-2 mx-auto">
+            <div className="relative mx-auto group overflow-hidden flex flex-col gap-2 text-center pt-3 h-full w-fit border-2 rounded-xl  border-gray-200 justify-center items-center">
               <div
                 className="absolute  bottom-0  w-full hidden md:block
                  bg-primary/90 dark:bg-primary/60 h-[50%] -z-10 group-hover:h-[100%] transition-all duration-300 rounded-lg"

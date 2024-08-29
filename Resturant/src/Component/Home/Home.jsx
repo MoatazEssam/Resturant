@@ -6,10 +6,11 @@ import Categories from "../Categories/Categories";
 import Menu from "../Menu/Menu";
 import Rating from "../Rating/Rating";
 import Reserve from "../Reserve/Reserve";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-black">
       <Header />
       <div id="landing">
         <Landing />
@@ -28,6 +29,9 @@ const Home = () => {
       </div>
       <div id="reserve">
         <Reserve />
+      </div>
+      <div id="footer">
+        <Footer />
       </div>
     </div>
   );
